@@ -117,6 +117,13 @@
 .feature h3 { font-size: 1.15rem; }
 .feature p { font-size: 0.92rem; margin: 0; }
 
+/* ---------- CATEGORÍAS (menú visual de productos) ---------- */
+.category-menu { padding: 110px 0; background: var(--color-gray-50); }
+.category-menu-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px; }
+.category-menu-grid .product-card { text-decoration: none; cursor: pointer; }
+.category-menu-grid .product-card .more { font-size: 0.8rem; font-weight: 700; color: var(--color-secondary); margin-top: auto; display: inline-flex; align-items: center; gap: 6px; transition: gap var(--transition-fast); }
+.category-menu-grid .product-card:hover .more { gap: 10px; }
+
 /* ---------- BRANDS MARQUEE ---------- */
 .brands { padding: 70px 0; background: var(--color-gray-50); }
 .brands .section-head { margin-bottom: 34px; }
@@ -329,12 +336,12 @@
 @media (max-width: 1080px) {
   .hero .container, .about-split .container, .contact-grid, .portal-split .container, .product-detail .container { grid-template-columns: 1fr; }
   .hero-visual { height: 320px; margin-top: 20px; }
-  .feature-grid, .product-grid, .solution-grid, .values-grid, .category-grid, .timeline-items { grid-template-columns: repeat(2, 1fr); }
+  .feature-grid, .product-grid, .solution-grid, .values-grid, .category-grid, .timeline-items, .category-menu-grid { grid-template-columns: repeat(2, 1fr); }
   .dash-body { grid-template-columns: 1fr; }
   .login-card { position: static; }
 }
 @media (max-width: 640px) {
-  .feature-grid, .product-grid, .solution-grid, .values-grid, .category-grid, .timeline-items, .field-row { grid-template-columns: 1fr; }
+  .feature-grid, .product-grid, .solution-grid, .values-grid, .category-grid, .timeline-items, .field-row, .category-menu-grid { grid-template-columns: 1fr; }
   .cta-banner .inner { padding: 44px 28px; }
   .gallery-thumbs { grid-template-columns: repeat(4, 1fr); }
   .feature-list { grid-template-columns: 1fr; }
