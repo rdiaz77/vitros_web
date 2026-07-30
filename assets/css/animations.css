@@ -1,0 +1,73 @@
+/* ==========================================================================
+   Animaciones — scroll reveal, parallax, microinteracciones
+   ========================================================================== */
+
+[data-reveal] {
+  opacity: 0;
+  transform: translateY(36px);
+  transition: opacity 0.9s cubic-bezier(.16,1,.3,1), transform 0.9s cubic-bezier(.16,1,.3,1);
+}
+[data-reveal].in-view { opacity: 1; transform: translateY(0); }
+
+[data-reveal="fade"] { transform: none; }
+[data-reveal="left"] { transform: translateX(-50px); }
+[data-reveal="left"].in-view { transform: translateX(0); }
+[data-reveal="right"] { transform: translateX(50px); }
+[data-reveal="right"].in-view { transform: translateX(0); }
+[data-reveal="scale"] { transform: scale(0.92); }
+[data-reveal="scale"].in-view { transform: scale(1); }
+
+[data-reveal-group] > * { transition-delay: calc(var(--i, 0) * 90ms); }
+
+@keyframes float-y {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-18px); }
+}
+@keyframes float-slow {
+  0%, 100% { transform: translateY(0) rotate(0deg); }
+  50% { transform: translateY(-14px) rotate(4deg); }
+}
+@keyframes pulse-ring {
+  0% { box-shadow: 0 0 0 0 rgba(255,183,3,0.55); }
+  100% { box-shadow: 0 0 0 18px rgba(255,183,3,0); }
+}
+@keyframes spin-slow {
+  to { transform: rotate(360deg); }
+}
+@keyframes marquee {
+  from { transform: translateX(0); }
+  to { transform: translateX(-50%); }
+}
+@keyframes fadeInUp {
+  from { opacity: 0; transform: translateY(24px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+@keyframes shimmer {
+  0% { background-position: -200% 0; }
+  100% { background-position: 200% 0; }
+}
+
+.float { animation: float-y 6s ease-in-out infinite; }
+.float-slow { animation: float-slow 9s ease-in-out infinite; }
+.spin-slow { animation: spin-slow 22s linear infinite; }
+
+.pulse-dot { position: relative; }
+.pulse-dot::after {
+  content: '';
+  position: absolute; inset: 0;
+  border-radius: inherit;
+  animation: pulse-ring 2.4s cubic-bezier(.4,0,.6,1) infinite;
+}
+
+.marquee-track {
+  display: flex;
+  width: max-content;
+  gap: 60px;
+  animation: marquee 34s linear infinite;
+}
+.marquee-wrap:hover .marquee-track { animation-play-state: paused; }
+
+@media (prefers-reduced-motion: reduce) {
+  [data-reveal] { transition: none !important; opacity: 1 !important; transform: none !important; }
+  .float, .float-slow, .spin-slow, .marquee-track { animation: none !important; }
+}
