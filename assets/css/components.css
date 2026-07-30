@@ -109,8 +109,8 @@
 .icon-tile svg { width: 30px; height: 30px; }
 .card:hover .icon-tile,
 .feature:hover .icon-tile {
-  background: var(--color-black);
-  color: var(--color-accent);
+  background: var(--color-secondary);
+  color: #fff;
   transform: scale(1.08) rotate(-4deg);
 }
 
