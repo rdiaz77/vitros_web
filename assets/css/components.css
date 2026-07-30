@@ -24,33 +24,32 @@
 .btn:hover svg { transform: translateX(4px); }
 
 .btn-primary {
-  background: linear-gradient(135deg, var(--color-secondary), var(--color-primary));
-  color: var(--btn-fg);
-  box-shadow: var(--shadow-glow);
+  background: var(--color-black);
+  color: #fff;
+  box-shadow: 0 10px 26px rgba(10,10,10,0.28);
 }
-.btn-primary:hover { transform: translateY(-3px); box-shadow: 0 16px 34px rgba(2,48,71,0.28); }
+.btn-primary:hover { transform: translateY(-3px); background: var(--color-secondary); box-shadow: var(--shadow-glow); }
 
 .btn-accent {
   background: var(--color-accent);
-  color: var(--color-primary);
+  color: var(--color-black);
   box-shadow: 0 10px 26px rgba(255,183,3,0.35);
 }
 .btn-accent:hover { transform: translateY(-3px); box-shadow: 0 16px 34px rgba(255,183,3,0.45); }
 
 .btn-ghost {
-  background: rgba(255,255,255,0.12);
+  background: transparent;
   color: #fff;
   border: 1.5px solid rgba(255,255,255,0.5);
-  backdrop-filter: blur(6px);
 }
-.btn-ghost:hover { background: rgba(255,255,255,0.24); transform: translateY(-3px); }
+.btn-ghost:hover { background: #fff; color: var(--color-black); border-color: #fff; transform: translateY(-3px); }
 
 .btn-outline {
   background: transparent;
-  color: var(--color-primary);
-  border: 1.5px solid var(--color-support);
+  color: var(--color-black);
+  border: 1.5px solid var(--color-black);
 }
-.btn-outline:hover { background: var(--color-secondary-10); border-color: var(--color-secondary); transform: translateY(-3px); }
+.btn-outline:hover { background: var(--color-black); color: #fff; transform: translateY(-3px); }
 
 .btn-sm { padding: 11px 22px; font-size: 0.82rem; }
 .btn-block { width: 100%; }
@@ -66,7 +65,7 @@
 .card:hover {
   transform: translateY(-10px);
   box-shadow: var(--shadow-lg);
-  border-color: var(--color-support);
+  border-color: var(--color-black);
 }
 
 /* --- Glassmorphism --- */
@@ -110,8 +109,8 @@
 .icon-tile svg { width: 30px; height: 30px; }
 .card:hover .icon-tile,
 .feature:hover .icon-tile {
-  background: var(--color-primary);
-  color: #fff;
+  background: var(--color-black);
+  color: var(--color-accent);
   transform: scale(1.08) rotate(-4deg);
 }
 

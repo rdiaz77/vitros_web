@@ -3,7 +3,7 @@
    Paleta oficial: nunca usar colores fuera de este archivo.
    ========================================================================== */
 :root {
-  /* Paleta de marca */
+  /* Paleta de marca (acento — nunca dominante) */
   --color-primary: #023047;      /* Prussian Blue */
   --color-secondary: #219EBC;    /* Blue Green */
   --color-support: #8ECAE6;      /* Light Cornflower Blue */
@@ -11,36 +11,43 @@
   --color-accent: #FFB703;       /* Sunshine Yellow */
   --color-bg: #FFFFFF;
 
-  /* Derivados neutros (solo tonos de la paleta + escala de grises para texto) */
+  /* Base editorial blanco/negro — el color de marca aparece como acento sobre esto */
+  --color-black: #0A0A0A;
+  --color-black-soft: #131313;
+  --color-white: #FFFFFF;
+
+  /* Derivados neutros */
   --color-primary-90: #023047E6;
   --color-primary-10: #0230471A;
   --color-secondary-10: #219EBC1A;
   --color-support-30: #8ECAE64D;
-  --color-ink: #0B2534;
-  --color-ink-soft: #4C6773;
-  --color-gray-50: #F6F9FA;
-  --color-gray-100: #EDF3F5;
-  --color-gray-200: #DCE7EA;
-  --color-border: #E1EAED;
+  --color-ink: #0A0A0A;
+  --color-ink-soft: #4A4A48;
+  --color-gray-50: #F4F4F2;
+  --color-gray-100: #E8E8E5;
+  --color-gray-200: #D6D6D2;
+  --color-border: #E2E2DE;
+  --color-border-dark: rgba(255,255,255,0.14);
+  --color-ink-on-dark-soft: rgba(255,255,255,0.66);
 
-  /* Tipografía */
-  --font-display: 'Manrope', 'Segoe UI', system-ui, sans-serif;
+  /* Tipografía: display contundente + texto muy legible */
+  --font-display: 'Archivo', 'Arial Black', 'Segoe UI', system-ui, sans-serif;
   --font-body: 'Inter', 'Segoe UI', system-ui, sans-serif;
 
-  /* Radios y sombras */
-  --radius-sm: 10px;
-  --radius-md: 18px;
-  --radius-lg: 28px;
+  /* Radios y sombras — más rectos, menos "app pastel" */
+  --radius-sm: 3px;
+  --radius-md: 8px;
+  --radius-lg: 14px;
   --radius-pill: 999px;
 
-  --shadow-sm: 0 2px 10px rgba(2, 48, 71, 0.06);
-  --shadow-md: 0 12px 30px rgba(2, 48, 71, 0.10);
-  --shadow-lg: 0 25px 60px rgba(2, 48, 71, 0.16);
-  --shadow-glow: 0 8px 30px rgba(33, 158, 188, 0.35);
+  --shadow-sm: 0 2px 12px rgba(10, 10, 10, 0.06);
+  --shadow-md: 0 14px 34px rgba(10, 10, 10, 0.12);
+  --shadow-lg: 0 30px 70px rgba(10, 10, 10, 0.28);
+  --shadow-glow: 0 10px 30px rgba(255, 183, 3, 0.30);
 
-  /* Glassmorphism */
-  --glass-bg: rgba(255, 255, 255, 0.6);
-  --glass-border: rgba(255, 255, 255, 0.45);
+  /* Glassmorphism (uso puntual: cards claras flotando sobre fondos negros) */
+  --glass-bg: rgba(255, 255, 255, 0.92);
+  --glass-border: rgba(255, 255, 255, 0.6);
   --glass-blur: 18px;
 
   /* Layout */
