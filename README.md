@@ -68,3 +68,4 @@ No hay variables de entorno ni configuración de servidor que ajustar. Antes de 
 - El teléfono de contacto y el número de WhatsApp siguen siendo de ejemplo (`+56 2 2345 6789` / `wa.me/56912345678`) — falta el dato real.
 - `politicas.html` tiene un bloque placeholder a la espera del documento real de políticas de la empresa.
 - Integración de backend/CMS para productos y portal de clientes sigue pendiente (fuera del alcance de este mockup estático).
+- **Pendiente (no ahora): edición de contenido sin código.** Hoy todo el contenido vive directo en el HTML — cualquier cambio de texto/producto pasa por editar código. Cuando se retome, evaluar entre (a) mover la data a archivos JSON que el JS renderiza (liviano, se mantiene 100% estático) o (b) un CMS git-based tipo Decap CMS (da un panel de edición real, pero se aleja del "sin CMS" del brief original). Explícitamente marcado como no prioritario por ahora.
