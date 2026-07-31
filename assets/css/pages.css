@@ -16,6 +16,14 @@
 /* Espacio reservado para el <video>/<iframe> real; por ahora, negro sólido. */
 .hero-media-slot { position: absolute; inset: 0; z-index: 0; background: #000; overflow: hidden; }
 .hero-media-slot video { width: 100%; height: 100%; object-fit: cover; }
+@media (max-width: 640px) {
+  .hero-media-slot video { display: none; }
+  .hero-media-slot { background: #000 url('../video/hero-poster.jpg') center / cover no-repeat; }
+}
+@media (prefers-reduced-motion: reduce) {
+  .hero-media-slot video { display: none; }
+  .hero-media-slot { background: #000 url('../video/hero-poster.jpg') center / cover no-repeat; }
+}
 /* Oscurece la izquierda (donde va el texto) y los bordes sup/inf, sin importar qué video/foto se use. */
 .hero-scrim {
   position: absolute; inset: 0; z-index: 1;
