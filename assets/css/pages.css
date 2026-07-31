@@ -87,7 +87,8 @@
 
 
 /* ---------- CATEGORÍAS (menú visual de productos) ---------- */
-.category-menu { padding: 110px 0; background: var(--color-gray-50); }
+.category-menu { padding: 64px 0; background: var(--color-gray-50); }
+.category-menu .section-head { margin-bottom: 34px; }
 .category-menu-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 22px; }
 .category-menu-grid .product-card { text-decoration: none; cursor: pointer; }
 .category-menu-grid .product-card .thumb { height: 140px; }
