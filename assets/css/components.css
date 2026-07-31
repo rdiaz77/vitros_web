@@ -24,7 +24,7 @@
 .btn:hover svg { transform: translateX(4px); }
 
 .btn-primary {
-  background: linear-gradient(135deg, var(--color-secondary), var(--color-primary));
+  background: var(--color-secondary);
   color: #fff;
   box-shadow: var(--shadow-glow);
 }
@@ -102,7 +102,7 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  background: linear-gradient(145deg, var(--color-support-30), var(--color-secondary-10));
+  background: var(--color-support-30);
   color: var(--color-secondary);
   margin-bottom: 22px;
   transition: transform var(--transition-fast), background var(--transition-fast), color var(--transition-fast);

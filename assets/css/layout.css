@@ -177,13 +177,6 @@
 
 /* --- Footer --- */
 .site-footer { background: var(--color-primary); color: rgba(255,255,255,0.72); position: relative; overflow: hidden; }
-.site-footer::before {
-  content: '';
-  position: absolute; inset: 0;
-  background: radial-gradient(circle at 15% 20%, rgba(33,158,188,0.35), transparent 55%),
-              radial-gradient(circle at 85% 80%, rgba(144,190,109,0.18), transparent 55%);
-  pointer-events: none;
-}
 .footer-top { padding: 90px 0 60px; position: relative; }
 .footer-grid { display: grid; grid-template-columns: 1.4fr 1fr 1fr 1.2fr; gap: 50px; }
 .footer-brand p { color: rgba(255,255,255,0.6); max-width: 320px; }
