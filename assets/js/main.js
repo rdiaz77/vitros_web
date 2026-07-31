@@ -56,17 +56,6 @@ document.addEventListener('DOMContentLoaded', () => {
     revealEls.forEach(el => el.classList.add('in-view'));
   }
 
-  /* --- Parallax suave en el hero --- */
-  const heroOrb = document.querySelector('.hero-orb');
-  const heroDna = document.querySelector('.hero-dna');
-  if (heroOrb || heroDna) {
-    document.addEventListener('scroll', () => {
-      const y = window.scrollY;
-      if (heroOrb) heroOrb.style.transform = `translate(-50%, calc(-50% + ${y * 0.12}px)) rotate(${y * 0.03}deg)`;
-      if (heroDna) heroDna.style.transform = `translate(-50%, calc(-50% + ${y * 0.08}px))`;
-    }, { passive: true });
-  }
-
   /* --- Botón volver arriba --- */
   const backToTop = document.getElementById('back-to-top');
   if (backToTop) {
