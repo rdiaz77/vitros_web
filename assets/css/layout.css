@@ -142,7 +142,7 @@
 .mega-feature > *:not(.feature-bg) { position: relative; z-index: 1; }
 .mega-feature h4 { color: #fff; font-size: 1.05rem; margin: 0; }
 .mega-feature p { color: rgba(255,255,255,0.75); font-size: 0.85rem; margin: 0; }
-.mega-feature a { font-size: 0.85rem; font-weight: 700; color: var(--color-accent); display: inline-flex; align-items: center; gap: 6px; margin-top: auto; }
+.mega-feature a { font-size: 0.85rem; font-weight: 700; color: #141B41; display: inline-flex; align-items: center; gap: 6px; margin-top: auto; }
 
 /* --- Mobile nav --- */
 @media (max-width: 1080px) {
