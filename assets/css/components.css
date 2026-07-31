@@ -33,9 +33,9 @@
 .btn-accent {
   background: var(--color-accent);
   color: var(--color-primary);
-  box-shadow: 0 10px 26px rgba(255,183,3,0.35);
+  box-shadow: 0 10px 26px rgba(144,190,109,0.35);
 }
-.btn-accent:hover { transform: translateY(-3px); box-shadow: 0 16px 34px rgba(255,183,3,0.45); }
+.btn-accent:hover { transform: translateY(-3px); box-shadow: 0 16px 34px rgba(144,190,109,0.45); }
 
 .btn-ghost {
   background: rgba(255,255,255,0.12);
@@ -91,7 +91,7 @@
   background: var(--color-secondary-10);
   color: var(--color-secondary);
 }
-.badge.accent { background: rgba(255,183,3,0.16); color: #92650a; }
+.badge.accent { background: rgba(144,190,109,0.16); color: #3f6b2a; }
 .badge.green { background: rgba(144,190,109,0.18); color: #3f6b2a; }
 
 /* --- Icon tile --- */

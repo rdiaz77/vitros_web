@@ -28,8 +28,8 @@
   50% { transform: translateY(-14px) rotate(4deg); }
 }
 @keyframes pulse-ring {
-  0% { box-shadow: 0 0 0 0 rgba(255,183,3,0.55); }
-  100% { box-shadow: 0 0 0 18px rgba(255,183,3,0); }
+  0% { box-shadow: 0 0 0 0 rgba(144,190,109,0.55); }
+  100% { box-shadow: 0 0 0 18px rgba(144,190,109,0); }
 }
 @keyframes spin-slow {
   to { transform: rotate(360deg); }

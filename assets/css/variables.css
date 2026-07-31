@@ -8,7 +8,7 @@
   --color-secondary: #219EBC;    /* Blue Green */
   --color-support: #8ECAE6;      /* Light Cornflower Blue */
   --color-complement: #90BE6D;   /* Soft Leaf Green */
-  --color-accent: #FFB703;       /* Sunshine Yellow */
+  --color-accent: #90BE6D;       /* Soft Leaf Green — reemplaza el amarillo (fuera de marca) */
   --color-bg: #FFFFFF;
 
   /* Reservado para detalles puntuales (nunca como fondo de sección) */

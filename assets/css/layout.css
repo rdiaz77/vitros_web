@@ -8,8 +8,10 @@
    la clase .on-dark para que el texto nazca blanco y pase a oscuro al
    scrollear (ver bloque "on-dark" más abajo). */
 .site-header {
-  position: sticky;
+  position: fixed;
   top: 0;
+  left: 0;
+  right: 0;
   z-index: 100;
   height: var(--header-h);
   display: flex;
@@ -29,8 +31,8 @@
 .site-header .container { display: flex; align-items: center; justify-content: space-between; gap: 24px; }
 
 .brand { display: flex; align-items: center; gap: 12px; font-family: var(--font-display); }
-.brand .logo-mark { width: 42px; height: 42px; }
-.brand-word { font-weight: 800; font-size: 1.28rem; color: var(--color-primary); line-height: 1; transition: color var(--transition-fast); }
+.brand .logo-mark { width: 44px; height: 52px; color: var(--color-secondary); transition: color var(--transition-fast); }
+.brand-word { font-weight: 800; font-size: 1.28rem; color: var(--color-secondary); line-height: 1; transition: color var(--transition-fast); }
 .brand-word span { color: var(--color-secondary); transition: color var(--transition-fast); }
 .brand-sub { display: block; font-size: 0.62rem; letter-spacing: 0.18em; text-transform: uppercase; color: var(--color-ink-soft); font-family: var(--font-body); font-weight: 600; transition: color var(--transition-fast); }
 
@@ -55,15 +57,23 @@
 .main-nav > ul > li.active > a::before { content: '\2014'; margin-right: 2px; }
 .main-nav > ul > li.has-mega:hover > a svg { transform: rotate(180deg); }
 
-.header-cta { display: flex; align-items: center; gap: 12px; }
+.header-cta { display: flex; align-items: center; gap: 18px; }
 .nav-toggle { display: none; }
+
+.lang-toggle { display: flex; align-items: center; gap: 8px; font-family: var(--font-display); font-size: 0.78rem; font-weight: 700; letter-spacing: 0.06em; }
+.lang-toggle span { color: var(--color-ink-soft); cursor: pointer; opacity: 0.55; transition: opacity var(--transition-fast), color var(--transition-fast); }
+.lang-toggle span.active { opacity: 1; color: var(--color-primary); }
+.lang-toggle .sep { opacity: 0.3; }
+.site-header.on-dark:not(.scrolled) .lang-toggle span { color: rgba(255,255,255,0.6); }
+.site-header.on-dark:not(.scrolled) .lang-toggle span.active { color: #fff; opacity: 1; }
 
 /* --- Variante sobre hero oscuro (home) --- */
 .site-header.on-dark:not(.scrolled) .main-nav > ul > li > a { color: rgba(255,255,255,0.92); }
 .site-header.on-dark:not(.scrolled) .main-nav > ul > li > a:hover,
-.site-header.on-dark:not(.scrolled) .main-nav > ul > li.active > a { color: var(--color-accent); }
-.site-header.on-dark:not(.scrolled) .brand-word { color: #fff; }
-.site-header.on-dark:not(.scrolled) .brand-word span { color: var(--color-support); }
+.site-header.on-dark:not(.scrolled) .main-nav > ul > li.active > a { color: var(--color-support); }
+.site-header.on-dark:not(.scrolled) .logo-mark { color: var(--color-support); }
+.site-header.on-dark:not(.scrolled) .brand-word,
+.site-header.on-dark:not(.scrolled) .brand-word span { color: #fff; }
 .site-header.on-dark:not(.scrolled) .brand-sub { color: rgba(255,255,255,0.65); }
 .site-header.on-dark:not(.scrolled) .nav-toggle { background: rgba(255,255,255,0.1); border-color: rgba(255,255,255,0.3); }
 .site-header.on-dark:not(.scrolled) .nav-toggle span { background: #fff; }
@@ -177,6 +187,7 @@
 .footer-top { padding: 90px 0 60px; position: relative; }
 .footer-grid { display: grid; grid-template-columns: 1.4fr 1fr 1fr 1.2fr; gap: 50px; }
 .footer-brand p { color: rgba(255,255,255,0.6); max-width: 320px; }
+.footer-brand .logo-mark { color: var(--color-support); }
 .footer-brand .brand-word { color: #fff; }
 .footer-brand .brand-sub { color: rgba(255,255,255,0.55); }
 .footer-col h5 { color: #fff; font-family: var(--font-display); font-size: 0.95rem; margin-bottom: 20px; letter-spacing: 0.02em; }

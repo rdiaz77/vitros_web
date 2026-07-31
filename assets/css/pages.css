@@ -176,7 +176,7 @@
 
 /* ---------- CATEGORÍAS (menú visual de productos) ---------- */
 .category-menu { padding: 110px 0; background: var(--color-gray-50); }
-.category-menu-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px; }
+.category-menu-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 24px; }
 .category-menu-grid .product-card { text-decoration: none; cursor: pointer; }
 .category-menu-grid .product-card .more { font-size: 0.8rem; font-weight: 700; color: var(--color-secondary); margin-top: auto; display: inline-flex; align-items: center; gap: 6px; transition: gap var(--transition-fast); }
 .category-menu-grid .product-card:hover .more { gap: 10px; }
@@ -239,7 +239,7 @@
 }
 .cta-banner .inner::after {
   content:''; position:absolute; width: 340px; height: 340px; border-radius: 50%;
-  background: radial-gradient(circle, rgba(255,183,3,0.35), transparent 70%);
+  background: radial-gradient(circle, rgba(144,190,109,0.35), transparent 70%);
   right: -80px; top: -100px;
 }
 .cta-banner h2 { color: #fff; margin-bottom: 10px; max-width: 480px; }
