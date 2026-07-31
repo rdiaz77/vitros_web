@@ -135,7 +135,8 @@
   flex-direction: column;
   gap: 14px;
 }
-.mega-feature .icon-tile { background: rgba(255,255,255,0.14); color: var(--color-accent); margin-bottom: 0; }
+.mega-feature .icon-tile { background: rgba(255,255,255,0.14); color: var(--color-accent); margin-bottom: 0; overflow: hidden; }
+.mega-feature .icon-tile img { width: 100%; height: 100%; object-fit: contain; background: #fff; border-radius: inherit; }
 .mega-feature h4 { color: #fff; font-size: 1.05rem; margin: 0; }
 .mega-feature p { color: rgba(255,255,255,0.75); font-size: 0.85rem; margin: 0; }
 .mega-feature a { font-size: 0.85rem; font-weight: 700; color: var(--color-accent); display: inline-flex; align-items: center; gap: 6px; margin-top: auto; }
