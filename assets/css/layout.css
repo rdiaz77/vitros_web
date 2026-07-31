@@ -129,7 +129,7 @@
 .mega-feature {
   position: relative;
   overflow: hidden;
-  min-height: 320px;
+  min-height: 480px;
   border-radius: var(--radius-md);
   padding: 0;
   background: var(--color-primary);
