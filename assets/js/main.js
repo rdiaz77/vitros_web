@@ -116,6 +116,17 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   });
 
+  /* --- Correo ofuscado (evita que bots de spam lo lean desde el HTML) --- */
+  document.querySelectorAll('.mail-obfuscated').forEach(el => {
+    const email = `${el.dataset.mailUser}@${el.dataset.mailDomain}`;
+    el.textContent = email;
+    el.setAttribute('role', 'link');
+    el.setAttribute('tabindex', '0');
+    const open = () => { window.location.href = `mailto:${email}`; };
+    el.addEventListener('click', open);
+    el.addEventListener('keydown', (e) => { if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); open(); } });
+  });
+
   /* --- Año dinámico en footer --- */
   document.querySelectorAll('[data-year]').forEach(el => { el.textContent = new Date().getFullYear(); });
 });

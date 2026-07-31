@@ -77,6 +77,10 @@
   border: 1px solid var(--glass-border);
 }
 
+/* --- Correo ofuscado (texto ensamblado por JS, no expuesto en el HTML) --- */
+.mail-obfuscated { cursor: pointer; text-decoration-color: transparent; transition: text-decoration-color var(--transition-fast); }
+.mail-obfuscated:hover, .mail-obfuscated:focus-visible { text-decoration: underline; text-decoration-color: currentColor; }
+
 /* --- Badge / etiqueta de categoría --- */
 .badge {
   display: inline-flex;
