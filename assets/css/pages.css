@@ -232,14 +232,14 @@
 .category-toolbar { padding: 40px 0; border-bottom: 1px solid var(--color-border); }
 .pill-row { display: flex; flex-wrap: wrap; gap: 12px; }
 .category-section { padding: 46px 0 90px; }
-.category-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px; }
-.category-card { padding: 32px; display: flex; flex-direction: column; gap: 14px; }
-.category-card .count { font-size: 0.8rem; color: var(--color-secondary); font-weight: 700; }
-.category-card h3 { font-size: 1.12rem; margin: 0; }
-.category-card ul { display: flex; flex-direction: column; gap: 6px; margin-top: 4px; }
-.category-card ul li a { font-size: 0.85rem; color: var(--color-ink-soft); transition: color var(--transition-fast); }
+.category-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(200px, 1fr)); gap: 16px; }
+.category-card { padding: 18px 20px; display: flex; flex-direction: column; gap: 8px; border-radius: var(--radius-md); }
+.category-card .count { font-size: 0.64rem; color: var(--color-secondary); font-weight: 700; }
+.category-card h3 { font-size: 0.94rem; margin: 0; }
+.category-card ul { display: flex; flex-direction: column; gap: 3px; margin-top: 2px; }
+.category-card ul li a { font-size: 0.74rem; color: var(--color-ink-soft); transition: color var(--transition-fast); }
 .category-card ul li a:hover { color: var(--color-secondary); }
-.category-card .more { font-size: 0.8rem; font-weight: 700; color: var(--color-secondary); margin-top: auto; }
+.category-card .more { font-size: 0.72rem; font-weight: 700; color: var(--color-secondary); margin-top: auto; }
 
 /* ---------- PRODUCTO (detalle) ---------- */
 .product-detail { padding: 50px 0 100px; }
