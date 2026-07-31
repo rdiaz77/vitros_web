@@ -115,8 +115,8 @@
 .marquee-wrap { overflow: hidden; -webkit-mask-image: linear-gradient(90deg, transparent, #000 8%, #000 92%, transparent); mask-image: linear-gradient(90deg, transparent, #000 8%, #000 92%, transparent); }
 
 /* ---------- FEATURED PRODUCTS ---------- */
-.featured-products { padding: 110px 0; }
-.section-head-row { display: flex; justify-content: space-between; align-items: flex-end; margin-bottom: 50px; gap: 30px; flex-wrap: wrap; }
+.featured-products { padding: 48px 0 56px; }
+.section-head-row { display: flex; justify-content: space-between; align-items: flex-end; margin-bottom: 26px; gap: 30px; flex-wrap: wrap; }
 .section-head-row .section-head { margin-bottom: 0; }
 .product-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 24px; }
 .product-card { overflow: hidden; display: flex; flex-direction: column; }
@@ -134,17 +134,49 @@
 .product-card .body p { font-size: 0.86rem; margin: 0; flex: 1; }
 .product-card .body .btn { margin-top: 8px; align-self: flex-start; }
 
-/* Featured products: tighter 5-up grid, smaller/refined cards */
-.featured-products { padding: 90px 0 100px; }
-.featured-products .product-grid { grid-template-columns: repeat(5, 1fr); gap: 18px; }
-.featured-products .product-card { border-radius: var(--radius-md); }
-.featured-products .product-card .thumb { height: 128px; }
-.featured-products .product-card .thumb svg { width: 38px; height: 38px; }
-.featured-products .product-card .body { padding: 18px 18px 20px; gap: 8px; }
-.featured-products .product-card .body .badge { font-size: 0.64rem; padding: 5px 12px; }
-.featured-products .product-card .body h3 { font-size: 0.92rem; line-height: 1.32; }
-.featured-products .product-card .more { font-size: 0.78rem; font-weight: 700; color: var(--color-secondary); margin-top: 2px; display: inline-flex; align-items: center; gap: 6px; transition: gap var(--transition-fast); }
-.featured-products .product-card:hover .more { gap: 10px; }
+/* Featured products: slim, continuously-scrolling strip */
+.featured-track-wrap {
+  overflow: hidden;
+  -webkit-mask-image: linear-gradient(90deg, transparent, #000 6%, #000 94%, transparent);
+  mask-image: linear-gradient(90deg, transparent, #000 6%, #000 94%, transparent);
+}
+.featured-track { display: flex; width: max-content; gap: 16px; animation: featured-scroll 46s linear infinite; }
+.featured-track-wrap:hover .featured-track { animation-play-state: paused; }
+@keyframes featured-scroll {
+  from { transform: translateX(0); }
+  to { transform: translateX(-50%); }
+}
+.feat-card {
+  flex-shrink: 0;
+  width: 290px;
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  padding: 14px 16px;
+  background: #fff;
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-md);
+  box-shadow: var(--shadow-sm);
+  transition: border-color var(--transition-fast), box-shadow var(--transition-fast), transform var(--transition-fast);
+}
+.feat-card:hover { border-color: var(--color-support); box-shadow: var(--shadow-md); transform: translateY(-3px); }
+.feat-icon {
+  width: 42px; height: 42px;
+  flex-shrink: 0;
+  display: flex; align-items: center; justify-content: center;
+  border-radius: var(--radius-sm);
+  background: linear-gradient(150deg, var(--color-support-30), var(--color-gray-100));
+  color: var(--color-secondary);
+}
+.feat-icon svg { width: 20px; height: 20px; }
+.feat-text { display: flex; flex-direction: column; gap: 3px; min-width: 0; }
+.feat-badge { font-size: 0.6rem; font-weight: 700; letter-spacing: 0.08em; text-transform: uppercase; color: var(--color-secondary); }
+.feat-title { font-family: var(--font-display); font-weight: 700; font-size: 0.86rem; color: var(--color-primary); white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+.feat-arrow { width: 16px; height: 16px; color: var(--color-ink-soft); margin-left: auto; flex-shrink: 0; transition: transform var(--transition-fast), color var(--transition-fast); }
+.feat-card:hover .feat-arrow { transform: translateX(4px); color: var(--color-secondary); }
+@media (prefers-reduced-motion: reduce) {
+  .featured-track { animation: none !important; }
+}
 
 /* ---------- SOLUTIONS ---------- */
 .solutions { padding: 110px 0; background: var(--color-primary); color: #fff; position: relative; overflow: hidden; }
