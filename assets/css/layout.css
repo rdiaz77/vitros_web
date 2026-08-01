@@ -159,7 +159,7 @@
   /* top+height (no bottom/inset) because .site-header's backdrop-filter makes it
      the containing block for this fixed element; "bottom:0" would anchor to the
      header's own edge instead of the viewport. */
-  .main-nav { position: fixed; top: var(--header-h); left: 0; right: 0; height: calc(100vh - var(--header-h)); background: #fff; flex-direction: column; align-items: stretch; padding: 20px; overflow-y: auto; transform: translateX(100%); transition: transform var(--transition-med); }
+  .main-nav { position: fixed; top: var(--header-h); left: 0; right: 0; height: calc(100vh - var(--header-h)); height: calc(100dvh - var(--header-h)); background: #fff; flex-direction: column; align-items: stretch; padding: 20px; overflow-y: auto; -webkit-overflow-scrolling: touch; transform: translateX(100%); transition: transform var(--transition-med); }
   .main-nav.open { transform: translateX(0); }
   .main-nav > ul { flex-direction: column; align-items: stretch; gap: 2px; }
   .main-nav > ul > li > a { padding: 16px 14px; justify-content: space-between; }
