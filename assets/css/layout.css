@@ -69,10 +69,14 @@
 .site-header.on-dark:not(.scrolled) .lang-toggle span { color: rgba(255,255,255,0.6); }
 .site-header.on-dark:not(.scrolled) .lang-toggle span.active { color: #fff; opacity: 1; }
 
-/* --- Variante sobre hero oscuro (home) --- */
-.site-header.on-dark:not(.scrolled) .main-nav > ul > li > a { color: rgba(255,255,255,0.92); }
-.site-header.on-dark:not(.scrolled) .main-nav > ul > li > a:hover,
-.site-header.on-dark:not(.scrolled) .main-nav > ul > li.active > a { color: var(--color-support); }
+/* --- Variante sobre hero oscuro (home) ---
+   El texto blanco es solo para el header transparente flotando sobre el
+   video (desktop). El panel del menú mobile (.main-nav.open) siempre tiene
+   fondo blanco sólido, así que estas reglas deben excluirlo explícitamente
+   o el texto queda blanco sobre blanco e invisible al abrir el menú. */
+.site-header.on-dark:not(.scrolled) .main-nav:not(.open) > ul > li > a { color: rgba(255,255,255,0.92); }
+.site-header.on-dark:not(.scrolled) .main-nav:not(.open) > ul > li > a:hover,
+.site-header.on-dark:not(.scrolled) .main-nav:not(.open) > ul > li.active > a { color: var(--color-support); }
 .site-header.on-dark:not(.scrolled) .brand-sub { color: rgba(255,255,255,0.65); }
 .site-header.on-dark:not(.scrolled) .nav-toggle { background: rgba(255,255,255,0.1); border-color: rgba(255,255,255,0.3); }
 .site-header.on-dark:not(.scrolled) .nav-toggle span { background: #fff; }
