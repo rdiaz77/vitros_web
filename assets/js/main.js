@@ -116,6 +116,49 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   });
 
+  /* --- Envío de formularios reales vía Web3Forms --- */
+  document.querySelectorAll('form[data-web3form]').forEach(form => {
+    form.addEventListener('submit', async (e) => {
+      e.preventDefault();
+      const feedback = form.querySelector('.form-feedback');
+      const button = form.querySelector('button[type="submit"]');
+      const buttonLabel = button ? button.innerHTML : '';
+
+      if (button) { button.disabled = true; button.style.opacity = '0.7'; }
+      if (feedback) { feedback.classList.remove('show'); feedback.style.color = ''; feedback.style.background = ''; }
+
+      try {
+        const response = await fetch('https://api.web3forms.com/submit', {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json', Accept: 'application/json' },
+          body: JSON.stringify(Object.fromEntries(new FormData(form).entries()))
+        });
+        const result = await response.json();
+
+        if (feedback) {
+          if (result.success) {
+            feedback.textContent = '¡Gracias! Tu mensaje fue enviado. Nuestro equipo te contactará a la brevedad.';
+          } else {
+            feedback.textContent = 'No pudimos enviar tu mensaje. Intenta nuevamente o escríbenos directo a ventas@vitroscience.cl.';
+            feedback.style.color = '#b3261e';
+            feedback.style.background = 'rgba(179,38,30,0.1)';
+          }
+          feedback.classList.add('show');
+        }
+        if (result.success) form.reset();
+      } catch (err) {
+        if (feedback) {
+          feedback.textContent = 'No pudimos enviar tu mensaje. Intenta nuevamente o escríbenos directo a ventas@vitroscience.cl.';
+          feedback.style.color = '#b3261e';
+          feedback.style.background = 'rgba(179,38,30,0.1)';
+          feedback.classList.add('show');
+        }
+      } finally {
+        if (button) { button.disabled = false; button.style.opacity = ''; button.innerHTML = buttonLabel; }
+      }
+    });
+  });
+
   /* --- Correo ofuscado (evita que bots de spam lo lean desde el HTML) --- */
   document.querySelectorAll('.mail-obfuscated').forEach(el => {
     const email = `${el.dataset.mailUser}@${el.dataset.mailDomain}`;
