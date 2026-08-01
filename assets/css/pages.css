@@ -97,13 +97,18 @@
 /* ---------- CATEGORÍAS (menú visual de productos) ---------- */
 .category-menu { padding: 32px 0 64px; background: var(--color-gray-50); }
 .category-menu .section-head { margin-bottom: 34px; }
-.category-menu-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 22px; }
+.category-menu-grid { display: grid; grid-template-columns: repeat(4, 1fr); grid-auto-rows: 200px; gap: 20px; }
 .category-menu-grid .product-card { text-decoration: none; cursor: pointer; }
 .category-menu-grid .product-card .thumb { height: 140px; }
 .category-menu-grid .product-card .thumb svg { width: 44px; height: 44px; }
 .category-menu-grid .product-card .body { padding: 20px; gap: 8px; }
 .category-menu-grid .product-card .body h3 { font-size: 1rem; }
 .category-menu-grid .product-card .body p { font-size: 0.84rem; line-height: 1.5; }
+.category-menu-grid .product-card.featured { grid-column: span 2; grid-row: span 2; }
+.category-menu-grid .product-card.featured .thumb { height: 260px; }
+.category-menu-grid .product-card.featured .body h3 { font-size: 1.4rem; }
+.category-menu-grid .product-card.featured .body p { font-size: 0.95rem; max-width: 40ch; }
+.category-menu-grid .product-card.featured .body .badge { font-size: 0.76rem; }
 .category-menu-grid .product-card .more { font-size: 0.8rem; font-weight: 700; color: var(--color-secondary); margin-top: auto; display: inline-flex; align-items: center; gap: 6px; transition: gap var(--transition-fast); }
 .category-menu-grid .product-card:hover .more { gap: 10px; }
 
@@ -380,6 +385,8 @@
 }
 @media (max-width: 640px) {
   .feature-grid, .product-grid, .solution-grid, .values-grid, .category-grid, .timeline-items, .field-row, .category-menu-grid { grid-template-columns: 1fr; }
+  .category-menu-grid .product-card.featured { grid-column: span 1; grid-row: span 1; }
+  .category-menu-grid .product-card.featured .thumb { height: 180px; }
   .featured-products .product-grid { grid-template-columns: 1fr; }
   .cta-banner .inner { padding: 44px 28px; }
   .gallery-thumbs { grid-template-columns: repeat(4, 1fr); }
