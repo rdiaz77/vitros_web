@@ -1,8 +1,6 @@
 /* ==========================================================================
    Reset & fundamentos tipográficos
    ========================================================================== */
-@import url('https://fonts.googleapis.com/css2?family=Manrope:wght@500;600;700;800&family=Inter:wght@400;500;600;700&display=swap');
-
 *, *::before, *::after { box-sizing: border-box; }
 
 html {
@@ -51,6 +49,20 @@ p { margin: 0 0 1em; color: var(--color-ink-soft); line-height: 1.7; max-width: 
 section { position: relative; }
 
 ::selection { background: var(--color-accent); color: var(--color-primary); }
+
+/* Foco visible accesible sobre elementos interactivos */
+a:focus-visible,
+button:focus-visible,
+.btn:focus-visible,
+.card:focus-visible,
+.pill:focus-visible,
+input:focus-visible,
+textarea:focus-visible,
+select:focus-visible {
+  outline: 2.5px solid var(--color-secondary);
+  outline-offset: 3px;
+  border-radius: 4px;
+}
 
 /* Scrollbar de acento */
 ::-webkit-scrollbar { width: 10px; }
