@@ -231,7 +231,7 @@
 .timeline-track::before { content:''; position:absolute; left: 0; right:0; top: 31px; height: 2px; background: var(--color-border); }
 .timeline-items { display: grid; grid-template-columns: repeat(4, 1fr); gap: 20px; }
 .timeline-item { position: relative; padding-top: 62px; }
-.timeline-item::before { content: attr(data-year); position:absolute; top:0; left:0; width: 62px; height: 62px; border-radius: 50%; background: var(--color-primary); color:#fff; display:flex; align-items:center; justify-content:center; font-family: var(--font-display); font-weight: 800; font-size: 0.82rem; letter-spacing: -0.02em; z-index: 1; }
+.timeline-item::before { content: attr(data-milestone-year); position:absolute; top:0; left:0; width: 62px; height: 62px; border-radius: 50%; background: var(--color-primary); color:#fff; display:flex; align-items:center; justify-content:center; font-family: var(--font-display); font-weight: 800; font-size: 0.82rem; letter-spacing: -0.02em; z-index: 1; }
 .timeline-item h4 { font-size: 1rem; margin-bottom: 8px; }
 .timeline-item p { font-size: 0.86rem; }
 .timeline-item.is-upcoming::before { background: transparent; border: 2px dashed var(--color-border); color: var(--color-ink-soft); }
