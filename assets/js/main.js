@@ -15,14 +15,35 @@ document.addEventListener('DOMContentLoaded', () => {
   document.addEventListener('scroll', onScroll, { passive: true });
   onScroll();
 
-  /* --- Menú móvil --- */
+  /* --- Menú móvil ---
+     iOS Safari no respeta de forma confiable `overflow:hidden` en <body> para
+     bloquear el scroll de fondo. Combinado con `position:fixed` en el panel
+     del menú, esto puede hacer que el panel se dibuje relativo a la posición
+     de scroll que tenía la página al abrirlo, en vez del tope real de la
+     pantalla — dando la sensación de que el menú "no se despliega completo".
+     Se fija el <body> en su lugar (position:fixed + top negativo) y se
+     restaura el scroll exacto al cerrar, que es el patrón robusto para iOS. */
   const navToggle = document.querySelector('.nav-toggle');
   const mainNav = document.querySelector('.main-nav');
+  let lockedScrollY = 0;
   if (navToggle && mainNav) {
     navToggle.addEventListener('click', () => {
-      navToggle.classList.toggle('open');
-      mainNav.classList.toggle('open');
-      document.body.style.overflow = mainNav.classList.contains('open') ? 'hidden' : '';
+      const opening = !mainNav.classList.contains('open');
+      navToggle.classList.toggle('open', opening);
+      mainNav.classList.toggle('open', opening);
+      if (opening) {
+        lockedScrollY = window.scrollY;
+        document.body.style.position = 'fixed';
+        document.body.style.top = `-${lockedScrollY}px`;
+        document.body.style.left = '0';
+        document.body.style.right = '0';
+      } else {
+        document.body.style.position = '';
+        document.body.style.top = '';
+        document.body.style.left = '';
+        document.body.style.right = '';
+        window.scrollTo(0, lockedScrollY);
+      }
     });
   }
 
