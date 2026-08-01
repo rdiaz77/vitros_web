@@ -140,6 +140,7 @@
 .mega-feature h4 { color: #fff; font-size: 0.95rem; margin: 0; }
 .mega-feature p { color: rgba(255,255,255,0.75); font-size: 0.8rem; margin: 0; }
 .mega-feature a { font-size: 0.8rem; font-weight: 700; color: var(--color-support); display: inline-flex; align-items: center; gap: 6px; margin-top: auto; }
+.mega-feature a svg { width: 14px; height: 14px; flex-shrink: 0; }
 
 /* --- Mobile nav --- */
 @media (max-width: 1080px) {
@@ -157,7 +158,12 @@
   }
   .mega-menu { display: none; }
   .main-nav > ul > li.has-mega.open .mega-menu { display: grid; }
-  .mega-feature { display: none; }
+  .mega-feature { display: block; margin: 6px 0 0; background: none; }
+  .mega-feature .feature-bg { display: none; }
+  .mega-feature .feature-panel { background: var(--color-gray-50); border-radius: var(--radius-sm); padding: 14px 16px; gap: 6px; }
+  .mega-feature h4 { color: var(--color-primary); font-size: 0.85rem; }
+  .mega-feature p { color: var(--color-ink-soft); font-size: 0.78rem; }
+  .mega-feature a { color: var(--color-secondary); margin-top: 4px; }
   .nav-toggle { display: flex; }
 }
 
