@@ -166,7 +166,7 @@
   .mega-menu,
   .main-nav > ul > li.has-mega:hover .mega-menu,
   .main-nav > ul > li.has-mega.open .mega-menu {
-    position: static; opacity: 1; visibility: visible; pointer-events: auto; width: auto;
+    position: static; opacity: 1; visibility: visible; pointer-events: auto; width: auto; left: auto; transform: none;
   }
   .mega-menu-panel,
   .main-nav > ul > li.has-mega:hover .mega-menu-panel,
