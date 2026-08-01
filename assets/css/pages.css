@@ -312,7 +312,7 @@
 .info-box h4 { font-size: 0.95rem; margin: 0 0 4px; }
 .info-box p { font-size: 0.85rem; margin: 0; }
 
-.product-tabs { margin-top: 90px; }
+.container.product-tabs { display: block; margin-top: 90px; }
 .tab-nav { display: flex; gap: 6px; border-bottom: 2px solid var(--color-border); margin-bottom: 40px; flex-wrap: wrap; }
 .tab-nav button {
   padding: 16px 24px; background: none; border: none; cursor: pointer;
