@@ -97,31 +97,63 @@
 /* ---------- CATEGORÍAS (menú visual de productos) ---------- */
 .category-menu { padding: 32px 0 64px; background: var(--color-gray-50); }
 .category-menu .section-head { margin-bottom: 34px; }
-/* Bento grid: 3 cols — featured spans 2, non-featured stack in rows of 3 */
+/* ── Bento 2-col: featured left (tall), 4 cards 2×2 right ── */
 .category-menu-grid {
   display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  grid-auto-rows: auto;
+  grid-template-columns: 1.15fr 1fr 1fr;
+  grid-template-rows: 1fr 1fr;
   gap: 16px;
+  min-height: 460px;
 }
-.category-menu-grid .product-card { text-decoration: none; cursor: pointer; border-radius: 16px; overflow: hidden; }
-.category-menu-grid .product-card .thumb { height: 140px; overflow: hidden; }
-.category-menu-grid .product-card .thumb img { transition: transform 0.4s ease; }
-.category-menu-grid .product-card:hover .thumb img { transform: scale(1.05); }
-.category-menu-grid .product-card .thumb svg { width: 44px; height: 44px; }
-.category-menu-grid .product-card .body { padding: 14px 18px 18px; gap: 6px; }
-.category-menu-grid .product-card .body h3 { font-size: 1rem; }
-.category-menu-grid .product-card .body p { font-size: 0.82rem; line-height: 1.45; display: none; }
 
-/* Featured: wide (2 cols), same row height as siblings */
-.category-menu-grid .product-card.featured { grid-column: span 2; }
-.category-menu-grid .product-card.featured .thumb { height: 220px; }
-.category-menu-grid .product-card.featured .body { padding: 20px 26px 24px; gap: 10px; }
-.category-menu-grid .product-card.featured .body h3 { font-size: 1.35rem; }
-.category-menu-grid .product-card.featured .body p { display: block; font-size: 0.9rem; max-width: 42ch; line-height: 1.55; }
+/* All cards */
+.category-menu-grid .product-card {
+  text-decoration: none;
+  cursor: pointer;
+  border-radius: 16px;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+}
+.category-menu-grid .product-card .thumb {
+  flex: 1;
+  min-height: 140px;
+  overflow: hidden;
+}
+.category-menu-grid .product-card .thumb img {
+  width: 100%; height: 100%;
+  object-fit: cover;
+  transition: transform 0.45s ease;
+}
+.category-menu-grid .product-card:hover .thumb img { transform: scale(1.06); }
+.category-menu-grid .product-card .thumb svg { width: 44px; height: 44px; }
+.category-menu-grid .product-card .body { padding: 14px 18px 16px; gap: 5px; flex: 0 0 auto; }
+.category-menu-grid .product-card .body h3 { font-size: 0.95rem; margin: 0; }
+.category-menu-grid .product-card .body p { display: none; }
+
+/* Featured: left column, full 2 rows */
+.category-menu-grid .product-card.featured {
+  grid-column: 1;
+  grid-row: 1 / 3;
+}
+.category-menu-grid .product-card.featured .thumb { min-height: 280px; }
+.category-menu-grid .product-card.featured .body { padding: 22px 26px 24px; gap: 10px; }
+.category-menu-grid .product-card.featured .body h3 { font-size: 1.4rem; }
+.category-menu-grid .product-card.featured .body p {
+  display: block;
+  font-size: 0.9rem;
+  line-height: 1.55;
+  max-width: 38ch;
+}
 .category-menu-grid .product-card.featured .body .badge { font-size: 0.75rem; }
 
-.category-menu-grid .product-card .more { font-size: 0.8rem; font-weight: 700; color: var(--color-secondary); margin-top: auto; display: inline-flex; align-items: center; gap: 6px; transition: gap var(--transition-fast); }
+.category-menu-grid .product-card .more {
+  font-size: 0.8rem; font-weight: 700;
+  color: var(--color-secondary);
+  margin-top: 8px;
+  display: inline-flex; align-items: center; gap: 6px;
+  transition: gap var(--transition-fast);
+}
 .category-menu-grid .product-card:hover .more { gap: 10px; }
 
 /* ---------- BRANDS MARQUEE ---------- */
@@ -399,7 +431,10 @@
 @media (max-width: 1080px) {
   .about-split .container, .contact-grid, .portal-split .container, .product-detail .container { grid-template-columns: 1fr; }
   .hero-badges { display: none; }
-  .feature-grid, .product-grid, .solution-grid, .values-grid, .category-grid, .timeline-items, .category-menu-grid { grid-template-columns: repeat(2, 1fr); }
+  .feature-grid, .product-grid, .solution-grid, .values-grid, .category-grid, .timeline-items { grid-template-columns: repeat(2, 1fr); }
+  .category-menu-grid { grid-template-columns: 1fr 1fr; grid-template-rows: auto; min-height: unset; }
+  .category-menu-grid .product-card.featured { grid-column: 1 / -1; grid-row: auto; }
+  .category-menu-grid .product-card.featured .thumb { min-height: 220px; }
   .featured-products .product-grid { grid-template-columns: repeat(2, 1fr); }
   .dash-body { grid-template-columns: 1fr; }
   .login-card { position: static; }

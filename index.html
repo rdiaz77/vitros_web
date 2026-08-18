@@ -523,7 +523,9 @@
   <script>
     (function(){
       var pick = Math.random() < 0.5 ? 'cat-biomol' : 'cat-alergias';
-      document.getElementById(pick).classList.add('featured');
+      var el = document.getElementById(pick);
+      el.classList.add('featured');
+      el.parentNode.prepend(el);
     })();
   </script>
 </body>
