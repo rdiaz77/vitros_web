@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Página no encontrada | Vitroscience SpA</title>
+  <meta name="description" content="La página que buscas no existe. Explora nuestros productos de diagnóstico clínico, biología molecular y test rápidos.">
+  <meta name="robots" content="noindex, follow">
+  <meta name="theme-color" content="#023047">
+  <link rel="icon" type="image/png" href="assets/img/favicon.png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Manrope:wght@500;600;700;800&family=Inter:wght@400;500;600;700&display=swap">
+  <link rel="stylesheet" href="assets/css/variables.css">
+  <link rel="stylesheet" href="assets/css/base.css">
+  <link rel="stylesheet" href="assets/css/components.css">
+  <link rel="stylesheet" href="assets/css/layout.css">
+  <link rel="stylesheet" href="assets/css/pages.css">
+  <style>
+    .error-section {
+      min-height: calc(100vh - var(--header-h, 72px));
+      display: flex;
+      align-items: center;
+      padding: 80px 0;
+    }
+    .error-inner {
+      max-width: 560px;
+      margin: 0 auto;
+      text-align: center;
+    }
+    .error-code {
+      font-size: clamp(6rem, 20vw, 10rem);
+      font-weight: 800;
+      line-height: 1;
+      color: var(--color-primary, #023047);
+      opacity: 0.08;
+      font-family: var(--font-heading);
+      user-select: none;
+    }
+    .error-inner h1 {
+      font-size: clamp(1.5rem, 4vw, 2rem);
+      margin-top: -2rem;
+      margin-bottom: 1rem;
+    }
+    .error-inner p {
+      color: var(--color-text-muted);
+      margin-bottom: 2rem;
+      font-size: 1.05rem;
+    }
+    .error-links {
+      display: flex;
+      gap: 12px;
+      justify-content: center;
+      flex-wrap: wrap;
+    }
+  </style>
+</head>
+<body>
+
+  <a class="skip-link" href="#main">Saltar al contenido</a>
+
+  <header class="site-header">
+    <div class="container">
+      <a href="index.html" class="brand">
+        <img src="assets/img/logo-vitroscience.png" alt="VitroScience" class="brand-logo">
+        <span class="brand-sub">Diagnóstico &amp; Ciencia</span>
+      </a>
+    </div>
+  </header>
+
+  <main id="main">
+    <section class="error-section">
+      <div class="container">
+        <div class="error-inner">
+          <div class="error-code" aria-hidden="true">404</div>
+          <h1>Página no encontrada</h1>
+          <p>La dirección que buscas no existe o fue movida. Puedes volver al inicio o explorar nuestros productos.</p>
+          <div class="error-links">
+            <a href="index.html" class="btn btn-primary">Ir al inicio</a>
+            <a href="categoria-qc-clinica.html" class="btn btn-outline">Qca. Clínica</a>
+            <a href="categoria-biologia-molecular.html" class="btn btn-outline">Biología Molecular</a>
+            <a href="categoria-test-rapidos.html" class="btn btn-outline">Test Rápidos</a>
+            <a href="contacto.html" class="btn btn-outline">Contacto</a>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <script src="assets/js/main.js" defer></script>
+</body>
+</html>
