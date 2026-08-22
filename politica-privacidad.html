@@ -180,7 +180,7 @@
             <li>Cuando sea requerido por ley o autoridad competente</li>
           </ul>
 
-          <h2 style="font-size:1.15rem;margin:32px 0 10px">7. Tus derechos</h2>
+          <h2 style="font-size:1.15rem;margin:32px 0 10px">7. Tus derechos (ARCO)</h2>
           <p>De acuerdo con la legislación chilena vigente, tienes derecho a:</p>
           <ul style="margin:10px 0 10px 20px;line-height:1.9">
             <li><strong>Acceso:</strong> solicitar qué datos tuyos tenemos almacenados</li>
@@ -188,7 +188,35 @@
             <li><strong>Cancelación:</strong> solicitar la eliminación de tus datos</li>
             <li><strong>Oposición:</strong> oponerte al tratamiento de tus datos para fines de marketing</li>
           </ul>
-          <p>Para ejercer estos derechos, escríbenos a <a href="mailto:ventas@vitroscience.cl">ventas@vitroscience.cl</a> indicando tu nombre y el derecho que deseas ejercer. Responderemos dentro de 30 días hábiles.</p>
+          <p>Responderemos dentro de <strong>30 días hábiles</strong> desde la recepción de tu solicitud.</p>
+
+          <div style="margin:28px 0;padding:28px;background:var(--color-surface-2);border-radius:var(--radius);border:1px solid var(--color-border)">
+            <h3 style="font-size:1rem;margin:0 0 8px">Solicitar eliminación de mis datos</h3>
+            <p style="color:var(--color-text-muted);font-size:.9rem;margin-bottom:20px">Completa el siguiente formulario y te confirmaremos la eliminación de tus datos dentro de 30 días hábiles.</p>
+            <form id="form-arco" style="display:flex;flex-direction:column;gap:14px">
+              <div class="field">
+                <label for="arco-nombre" style="font-size:.88rem">Nombre completo</label>
+                <input type="text" id="arco-nombre" placeholder="Tu nombre" required>
+              </div>
+              <div class="field">
+                <label for="arco-email" style="font-size:.88rem">Correo electrónico con que te registraste</label>
+                <input type="email" id="arco-email" placeholder="tucorreo@ejemplo.cl" required>
+              </div>
+              <div class="field">
+                <label for="arco-tipo" style="font-size:.88rem">Tipo de solicitud</label>
+                <select id="arco-tipo">
+                  <option value="Eliminación de datos">Eliminación de datos</option>
+                  <option value="Acceso a mis datos">Acceso a mis datos</option>
+                  <option value="Rectificación de datos">Rectificación de datos</option>
+                  <option value="Oposición al tratamiento">Oposición al tratamiento</option>
+                </select>
+              </div>
+              <button type="submit" class="btn btn-primary" style="align-self:flex-start">Enviar solicitud
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
+              </button>
+              <p class="form-feedback" id="arco-feedback"></p>
+            </form>
+          </div>
 
           <h2 style="font-size:1.15rem;margin:32px 0 10px">8. Cookies</h2>
           <p>Este sitio web no utiliza cookies de rastreo o publicidad. Puede utilizar cookies técnicas estrictamente necesarias para el funcionamiento del sitio.</p>
