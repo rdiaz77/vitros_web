@@ -163,6 +163,25 @@
 }
 .form-feedback.show { display: block; animation: fadeInUp .4s ease; }
 
+/* Field validation */
+.field-error {
+  display: block;
+  margin-top: 4px;
+  font-size: 0.8rem;
+  color: #b3261e;
+  min-height: 1em;
+}
+.field--error input,
+.field--error textarea,
+.field--error select {
+  border-color: #b3261e !important;
+  background: rgba(179,38,30,0.04);
+}
+.checkbox-row.field--error .field-error { display: block; }
+
+/* Spinner animation */
+@keyframes spin { to { transform: rotate(360deg); } }
+
 .is-hidden { display: none !important; }
 
 /* --- Tabla de especificaciones --- */

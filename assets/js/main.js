@@ -137,15 +137,52 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   });
 
+  /* --- Validación visual por campo --- */
+  function validateField(input) {
+    const field = input.closest('.field') || input.closest('.checkbox-row');
+    if (!field) return true;
+    let err = field.querySelector('.field-error');
+    if (!err) {
+      err = document.createElement('span');
+      err.className = 'field-error';
+      field.appendChild(err);
+    }
+    let msg = '';
+    if (input.required && !input.value.trim() && input.type !== 'checkbox') msg = 'Este campo es obligatorio.';
+    else if (input.type === 'email' && input.value && !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(input.value)) msg = 'Ingresa un correo válido.';
+    else if (input.type === 'checkbox' && input.required && !input.checked) msg = 'Debes aceptar la política de privacidad.';
+    err.textContent = msg;
+    input.setAttribute('aria-invalid', msg ? 'true' : 'false');
+    field.classList.toggle('field--error', !!msg);
+    return !msg;
+  }
+
+  document.querySelectorAll('form[data-web3form] input, form[data-web3form] textarea, form[data-web3form] select').forEach(input => {
+    input.addEventListener('blur', () => validateField(input));
+    input.addEventListener('input', () => { if (input.getAttribute('aria-invalid') === 'true') validateField(input); });
+  });
+
   /* --- Envío de formularios reales vía Web3Forms --- */
   document.querySelectorAll('form[data-web3form]').forEach(form => {
     form.addEventListener('submit', async (e) => {
       e.preventDefault();
+
+      // Validate all required fields first
+      const fields = form.querySelectorAll('input, textarea, select');
+      let valid = true;
+      fields.forEach(f => { if (!validateField(f)) valid = false; });
+      if (!valid) {
+        const firstErr = form.querySelector('.field--error input, .field--error textarea, .field--error');
+        if (firstErr) firstErr.focus();
+        return;
+      }
+
       const feedback = form.querySelector('.form-feedback');
       const button = form.querySelector('button[type="submit"]');
       const buttonLabel = button ? button.innerHTML : '';
+      const spinner = '<svg style="animation:spin 1s linear infinite;display:inline-block;vertical-align:middle;margin-right:8px" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><circle cx="12" cy="12" r="10" stroke-opacity=".25"/><path d="M12 2a10 10 0 0 1 10 10" /></svg>Enviando…';
 
-      if (button) { button.disabled = true; button.style.opacity = '0.7'; }
+      if (button) { button.disabled = true; button.innerHTML = spinner; }
       if (feedback) { feedback.classList.remove('show'); feedback.style.color = ''; feedback.style.background = ''; }
 
       try {
@@ -156,26 +193,26 @@ document.addEventListener('DOMContentLoaded', () => {
         });
         const result = await response.json();
 
-        if (feedback) {
-          if (result.success) {
-            feedback.textContent = '¡Gracias! Tu mensaje fue enviado. Nuestro equipo te contactará a la brevedad.';
-          } else {
-            feedback.textContent = 'No pudimos enviar tu mensaje. Intenta nuevamente o escríbenos directo a ventas@vitroscience.cl.';
+        if (result.success) {
+          form.reset();
+          window.location.href = 'gracias.html';
+        } else {
+          if (feedback) {
+            feedback.textContent = 'No pudimos enviar tu mensaje. Intenta nuevamente o escríbenos a ventas@vitroscience.cl.';
             feedback.style.color = '#b3261e';
-            feedback.style.background = 'rgba(179,38,30,0.1)';
+            feedback.style.background = 'rgba(179,38,30,0.08)';
+            feedback.classList.add('show');
           }
-          feedback.classList.add('show');
         }
-        if (result.success) form.reset();
       } catch (err) {
         if (feedback) {
-          feedback.textContent = 'No pudimos enviar tu mensaje. Intenta nuevamente o escríbenos directo a ventas@vitroscience.cl.';
+          feedback.textContent = 'Error de conexión. Intenta nuevamente o escríbenos a ventas@vitroscience.cl.';
           feedback.style.color = '#b3261e';
-          feedback.style.background = 'rgba(179,38,30,0.1)';
+          feedback.style.background = 'rgba(179,38,30,0.08)';
           feedback.classList.add('show');
         }
       } finally {
-        if (button) { button.disabled = false; button.style.opacity = ''; button.innerHTML = buttonLabel; }
+        if (button) { button.disabled = false; button.innerHTML = buttonLabel; }
       }
     });
   });
