@@ -4,11 +4,11 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Noticias | Vitroscience SpA</title>
-  <meta name="description" content="Novedades, artículos técnicos y actualidad científica de Vitroscience SpA.">
+  <meta name="description" content="Novedades, lanzamientos de productos y actualizaciones de Vitroscience SpA en diagnóstico clínico y biología molecular para laboratorios en Chile.">
 
   <meta property="og:type" content="website">
   <meta property="og:title" content="Noticias | Vitroscience SpA">
-  <meta property="og:description" content="Novedades, artículos técnicos y actualidad científica de Vitroscience SpA.">
+  <meta property="og:description" content="Novedades, lanzamientos de productos y actualizaciones de Vitroscience SpA en diagnóstico clínico y biología molecular para laboratorios en Chile.">
   <meta property="og:image" content="https://vitroscience.cl/assets/img/og-image.jpg">
   <meta property="og:locale" content="es_CL">
   <meta name="theme-color" content="#023047">
@@ -24,25 +24,10 @@
   <link rel="stylesheet" href="assets/css/layout.css">
   <link rel="stylesheet" href="assets/css/animations.css">
   <link rel="stylesheet" href="assets/css/pages.css">
-  <style>
-    .news-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px; }
-    .news-card { overflow: hidden; }
-    .news-card .thumb { height: 170px; }
-    .news-card .body { padding: 24px; display: flex; flex-direction: column; gap: 10px; }
-    .news-card .date { font-size: 0.78rem; color: var(--color-ink-soft); font-weight: 600; letter-spacing: 0.04em; }
-    .news-card h3 { font-size: 1.05rem; margin: 0; }
-    .newsletter-box { border-radius: var(--radius-lg); padding: 60px; background: var(--color-primary); color:#fff; display:flex; align-items:center; justify-content:space-between; gap:30px; flex-wrap:wrap; }
-    .newsletter-box h2 { color:#fff; margin-bottom:6px; }
-    .newsletter-box p { color: rgba(255,255,255,.7); margin:0; }
-    .newsletter-form { display:flex; gap:10px; flex-wrap:wrap; }
-    .newsletter-form input { padding: 15px 18px; border-radius: var(--radius-pill); border: none; min-width: 260px; }
-    @media (max-width: 900px) { .news-grid { grid-template-columns: 1fr 1fr; } }
-    @media (max-width: 640px) { .news-grid { grid-template-columns: 1fr; } }
-  </style>
   <link rel="canonical" href="https://vitroscience.cl/noticias.html">
   <meta name="twitter:card" content="summary_large_image">
   <meta name="twitter:title" content="Noticias | Vitroscience SpA">
-  <meta name="twitter:description" content="Novedades, artículos técnicos y actualidad científica de Vitroscience SpA.">
+  <meta name="twitter:description" content="Novedades, lanzamientos de productos y actualizaciones de Vitroscience SpA en diagnóstico clínico y biología molecular para laboratorios en Chile.">
   <meta name="twitter:image" content="https://vitroscience.cl/assets/img/og-image.jpg">
 </head>
 <body>
@@ -133,8 +118,8 @@
             </div>
           </li>
           <li><a href="clientes.html">Clientes</a></li>
-          <li class="active"><a href="noticias.html">Noticias</a></li>
-          <li><a href="contacto.html">Contacto</a></li>
+          <li><a href="noticias.html">Noticias</a></li>
+          <li class="active"><a href="contacto.html">Contacto</a></li>
         </ul>
       </nav>
 
@@ -147,69 +132,22 @@
     </div>
   </header>
 
+  
   <main id="main">
-
-    <section class="page-hero">
+    <section style="padding:calc(var(--header-h) + 60px) 0 80px;">
       <div class="container">
-        <nav class="breadcrumb" data-reveal="fade">
-          <a href="index.html">Inicio</a><span class="sep">/</span><span class="current">Noticias</span>
-        </nav>
-        <span class="eyebrow" data-reveal="fade">Actualidad científica</span>
-        <h1 data-reveal>Noticias y novedades Vitroscience</h1>
-        <p class="lead" data-reveal>Mantente al día con lanzamientos de productos, artículos técnicos y participación en congresos del sector diagnóstico.</p>
-      </div>
-    </section>
-
-    <section class="featured-products">
-      <div class="container">
-        <div class="news-grid" data-reveal-group>
-          <article class="news-card card" data-reveal="scale" style="--i:0">
-            <div class="thumb"><svg viewBox="0 0 24 24" width="52" height="52" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M7 3c0 6 10 6 10 12"/><path d="M17 3c0 6-10 6-10 12"/></svg></div>
-            <div class="body">
-              <span class="date">15 julio 2026</span>
-              <h3>Vitroscience incorpora nuevo panel respiratorio multi-6 a su catálogo</h3>
-              <p>Conoce la nueva generación de test rápidos para diagnóstico diferencial de virus respiratorios.</p>
-              <a href="producto.html" class="btn btn-outline btn-sm">Leer más</a>
-            </div>
-          </article>
-          <article class="news-card card" data-reveal="scale" style="--i:1">
-            <div class="thumb"><svg viewBox="0 0 24 24" width="52" height="52" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/><polyline points="9 12 11 14 15 10"/></svg></div>
-            <div class="body">
-              <span class="date">02 junio 2026</span>
-              <h3>Nuestro compromiso con la calidad: certificaciones y control interno</h3>
-              <p>Revisa los estándares que exigimos a cada fabricante que representamos en Chile.</p>
-              <a href="nosotros.html" class="btn btn-outline btn-sm">Leer más</a>
-            </div>
-          </article>
-          <article class="news-card card" data-reveal="scale" style="--i:2">
-            <div class="thumb"><svg viewBox="0 0 24 24" width="52" height="52" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="9" cy="21" r="1"/><circle cx="20" cy="21" r="1"/><path d="M1 1h4l2.68 13.39a2 2 0 0 0 2 1.61h9.72a2 2 0 0 0 2-1.61L23 6H6"/></svg></div>
-            <div class="body">
-              <span class="date">20 mayo 2026</span>
-              <h3>Nuevo portal de clientes: cotiza y recompra en minutos</h3>
-              <p>Descubre cómo nuestro nuevo portal simplifica la gestión de pedidos para tu laboratorio.</p>
-              <a href="clientes.html" class="btn btn-outline btn-sm">Leer más</a>
-            </div>
-          </article>
+        <div class="section-head" data-reveal>
+          <span class="eyebrow">Actualidad</span>
+          <h1>Noticias</h1>
+          <p>Próximamente publicaremos novedades sobre nuevos productos, actualizaciones técnicas y eventos del sector diagnóstico en Chile.</p>
+        </div>
+        <div style="margin-top:64px;text-align:center" data-reveal>
+          <a href="contacto.html" class="btn btn-outline">Contáctanos para más información</a>
         </div>
       </div>
     </section>
-
-    <section class="cta-banner">
-      <div class="container">
-        <div class="newsletter-box" data-reveal="scale">
-          <div>
-            <h2>Suscríbete a nuestro boletín</h2>
-            <p>Recibe novedades de producto y artículos técnicos directamente en tu correo.</p>
-          </div>
-          <form class="newsletter-form" data-mock-form>
-            <input type="email" placeholder="tucorreo@laboratorio.cl" required>
-            <button type="submit" class="btn btn-accent">Suscribirme</button>
-          </form>
-        </div>
-      </div>
-    </section>
-
   </main>
+
 
   <footer class="site-footer">
     <div class="footer-top">
