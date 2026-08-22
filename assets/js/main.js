@@ -198,7 +198,7 @@ document.addEventListener('DOMContentLoaded', () => {
           window.location.href = 'gracias.html';
         } else {
           if (feedback) {
-            feedback.textContent = 'No pudimos enviar tu mensaje. Intenta nuevamente o escríbenos a ventas@vitroscience.cl.';
+            feedback.textContent = 'No pudimos enviar tu mensaje. Intenta nuevamente, escríbenos a ventas@vitroscience.cl o llámanos al +56 2 6469 2293.';
             feedback.style.color = '#b3261e';
             feedback.style.background = 'rgba(179,38,30,0.08)';
             feedback.classList.add('show');
@@ -206,7 +206,7 @@ document.addEventListener('DOMContentLoaded', () => {
         }
       } catch (err) {
         if (feedback) {
-          feedback.textContent = 'Error de conexión. Intenta nuevamente o escríbenos a ventas@vitroscience.cl.';
+          feedback.textContent = 'Error de conexión. Intenta nuevamente, escríbenos a ventas@vitroscience.cl o llámanos al +56 2 6469 2293.';
           feedback.style.color = '#b3261e';
           feedback.style.background = 'rgba(179,38,30,0.08)';
           feedback.classList.add('show');
