@@ -217,52 +217,12 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   });
 
-  /* --- Formulario ARCO (solicitud de derechos sobre datos personales) --- */
-  const arcoForm = document.getElementById('form-arco');
-  if (arcoForm) {
-    arcoForm.addEventListener('submit', async (e) => {
-      e.preventDefault();
-      const nombre = document.getElementById('arco-nombre').value.trim();
-      const email  = document.getElementById('arco-email').value.trim();
-      const tipo   = document.getElementById('arco-tipo').value;
-      const fb     = document.getElementById('arco-feedback');
-      const btn    = arcoForm.querySelector('button[type="submit"]');
-      const btnLabel = btn.innerHTML;
-      if (!nombre || !email) return;
-      btn.disabled = true;
-      btn.innerHTML = 'Enviando…';
-      try {
-        const res = await fetch('https://api.web3forms.com/submit', {
-          method: 'POST',
-          headers: { 'Content-Type': 'application/json', Accept: 'application/json' },
-          body: JSON.stringify({
-            access_key: '4459f2e9-88cc-433d-8c26-be1e3bd31ffb',
-            subject: `Solicitud ARCO – ${tipo} | ${nombre}`,
-            nombre, email, tipo,
-            mensaje: `Solicitud de ${tipo} recibida desde politica-privacidad.html`
-          })
-        });
-        const result = await res.json();
-        if (result.success) {
-          fb.textContent = `Tu solicitud de ${tipo.toLowerCase()} fue recibida. Te confirmaremos dentro de 30 días hábiles a ${email}.`;
-          fb.style.color = '#3f6b2a';
-          fb.style.background = 'rgba(144,190,109,0.16)';
-          arcoForm.reset();
-        } else {
-          fb.textContent = 'No pudimos procesar tu solicitud. Escríbenos a ventas@vitroscience.cl.';
-          fb.style.color = '#b3261e';
-          fb.style.background = 'rgba(179,38,30,0.08)';
-        }
-        fb.classList.add('show');
-      } catch {
-        fb.textContent = 'Error de conexión. Escríbenos a ventas@vitroscience.cl o llámanos al +56 2 6469 2293.';
-        fb.style.color = '#b3261e';
-        fb.style.background = 'rgba(179,38,30,0.08)';
-        fb.classList.add('show');
-      } finally {
-        btn.disabled = false;
-        btn.innerHTML = btnLabel;
-      }
+  /* --- Formulario ARCO: sincronizar subject con tipo seleccionado --- */
+  const arcoTipo = document.getElementById('arco-tipo');
+  const arcoSubject = document.getElementById('arco-subject');
+  if (arcoTipo && arcoSubject) {
+    arcoTipo.addEventListener('change', () => {
+      arcoSubject.value = `Solicitud ARCO – ${arcoTipo.value} | Vitroscience SpA`;
     });
   }
 
